@@ -1,0 +1,57 @@
+export const modalConfig = {
+  previewData: {
+    analysis: '',
+    answer: 'C',
+    content: '进行高斯投影后，离中央子午线越远的地方，长度（  ）。',
+    createTime: 1651217545732,
+    difficulty: 2,
+    external: 1,
+    optionS: [
+      { name: 'A', value: '.保持不变', seq: 1, id: 1898110698539520 },
+      { name: 'B', value: '.变形越小', seq: 2, id: 1898110698547712 },
+      { name: 'C', value: '.变形越大', seq: 3, id: 1898110698547713 },
+      { name: 'D', value: '.变形无规律', seq: 4, id: 1898110698547714 },
+    ],
+    quesId: 1893793347439106,
+    quesNum: 5,
+    quesType: 1,
+    resources: [
+      {
+        id: 1898070366480896,
+        quesId: 1893793347439106,
+        seq: 1,
+        type: '0',
+        url: 'http://172.16.3.111:11150/question/6e0a15fa-1fe2-47e9-f54c-012938218e0e/1651739642752-jkjc.jpg',
+      },
+      {
+        id: 1898072023484928,
+        quesId: 1893793347439106,
+        seq: 2,
+        type: '0',
+        url: 'http://172.16.3.111:11150/question/ca3c6411-b525-2276-5217-0f319197595f/1651739845047-baseMon.png',
+      },
+      {
+        id: 1898075761224192,
+        quesId: 1893793347439106,
+        seq: 3,
+        type: '1',
+        url: 'http://172.16.3.111:11150/question/e19a8404-9713-121f-5e35-c37f6f137252/1651740301311-baseMon.png',
+      },
+      {
+        id: 1898075782269440,
+        quesId: 1893793347439106,
+        seq: 4,
+        type: '1',
+        url: 'http://172.16.3.111:11150/question/e19a8404-9713-121f-5e35-c37f6f137252/1651740303883-Snipaste_2021-12-08_08-40-50.png',
+      },
+    ],
+    state: 1,
+    updateTime: 1651744566130,
+  },
+  formData: {
+    paperName: '',
+    quesCount: undefined,
+    totalScore: undefined,
+    examTime: undefined,
+  },
+}
