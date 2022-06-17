@@ -34,6 +34,7 @@ export default {
   },
   created() {
     const formItems = this.searchFormConfig.form_item
+    console.log('formItems', formItems)
     this.formOriginData = {}
     for (const item of formItems) {
       if (item.name) {

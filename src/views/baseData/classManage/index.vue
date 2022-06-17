@@ -2,13 +2,7 @@
   <div>
     <a-card title="班级管理">
       <!-- 查询功能 -->
-      <page-search
-        ref="search"
-        :formItem="form_item"
-        :formHandler="form_handler"
-        :formData="form_data"
-        :formLayout="formLayout"
-      >
+      <page-search ref="search" :searchFormConfig="searchFormConfig" :formHandler="form_handler">
         <template slot="year">
           <a-date-picker
             format="YYYY"
@@ -94,7 +88,7 @@
 </template>
 
 <script>
-import pageSearch from '@/components/page-form'
+import pageSearch from '@/components/page-search'
 import modal from './modal.vue'
 import JEllipsis from '@/components/jeecg/JEllipsis'
 import * as dayjs from 'dayjs'
@@ -114,9 +108,10 @@ export default {
     JEllipsis,
   },
   data() {
+    const { form_data } = searchFormConfig
     return {
       // 查询
-      ...searchFormConfig,
+      searchFormConfig,
       form_handler: [
         {
           type: 'primary',
@@ -151,6 +146,7 @@ export default {
         list: '/api/learnClass',
         delete: '/api/learnClass/',
       },
+      form_data,
     }
   },
   mounted() {
@@ -159,17 +155,17 @@ export default {
     }
     this.form_data.schoolId = ' '
     this.form_data.teacherId = ' '
-    this.form_data_copy = JSON.parse(JSON.stringify(this.form_data))
-    const data = {
-      key: 1,
-    }
-    this.getData = this.$route.params
-    this.$store.dispatch('getSchoolList')
-    if (Object.keys(this.getData).length == 0) {
-      this.$store.dispatch('getTeacherList', data)
-    } else {
-      this.loadRouteData(this.getData)
-    }
+    // this.form_data_copy = JSON.parse(JSON.stringify(this.form_data))
+    // const data = {
+    //   key: 1,
+    // }
+    // this.getData = this.$route.params
+    // this.$store.dispatch('getSchoolList')
+    // if (Object.keys(this.getData).length == 0) {
+    //   this.$store.dispatch('getTeacherList', data)
+    // } else {
+    //   this.loadRouteData(this.getData)
+    // }
 
     // this.loadSearchData()
   },
@@ -185,8 +181,8 @@ export default {
         key: 1,
         id: newVal,
       }
-      if(newVal) this.$store.dispatch('getTeacherList', data)
-      else this.$store.dispatch('getTeacherList', {key: 1})
+      if (newVal) this.$store.dispatch('getTeacherList', data)
+      else this.$store.dispatch('getTeacherList', { key: 1 })
       this.form_data.teacherId = ' '
     },
   },

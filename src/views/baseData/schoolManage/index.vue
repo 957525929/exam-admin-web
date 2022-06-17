@@ -4,7 +4,13 @@
       <!-- 查询功能 -->
       <page-search ref="search" :searchFormConfig="searchFormConfig" :formHandler="form_handler" />
       <br />
-      <page-table v-bind="contentTableConfig">
+      <page-table
+        v-bind="contentTableConfig"
+        :url="url"
+        :dataSource="dataSource"
+        :ipagination="ipagination"
+        :rowKey="rowKey"
+      >
         <template slot="action" slot-scope="row">
           <a @click="handleEdit(row.record)">修改</a>
           <a-divider type="vertical" />
@@ -80,6 +86,7 @@ export default {
         list: '/api/school/paging',
         delete: '/api/school/',
       },
+      rowKey: 'id',
     }
   },
   methods: {
